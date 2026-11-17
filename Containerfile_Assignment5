@@ -1,10 +1,10 @@
 FROM fedora:latest
 
 RUN dnf -y upgrade && \
-    dnf -y install tuxpaint vim httpd && \
+    dnf -y install httpd && \
     dnf clean all
 
-COPY myinfo.html /var/www/html/myinfo.html
+COPY data/ /var/www/html/data/
 
 EXPOSE 80
 
